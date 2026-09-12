@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Medical Record Tracker</title>
+
+  <!-- PWA / "Add to Home Screen" metadata -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1F3864">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Medical Record">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #1F3864;
+    }
+    #appFrame {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* env(safe-area-inset-*) keeps content clear of iPhone notches/home indicator when
+         installed via "Add to Home Screen" (standalone display mode). */
+      height: calc(100% + env(safe-area-inset-bottom));
+      border: none;
+    }
+    #loadingScreen {
+      position: fixed;
+      inset: 0;
+      background: #1F3864;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+    #loadingScreen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="loadingScreen">Loading Medical Record Tracker…</div>
+
+  <!-- GANTI URL DI BAWAH INI dengan URL Deploy Apps Script Anda (harus diakhiri /exec) -->
+  <iframe id="appFrame" src="https://script.google.com/macros/s/GANTI_DENGAN_DEPLOYMENT_ID_ANDA/exec"
+          allow="clipboard-write" title="Medical Record Tracker"></iframe>
+
+  <script>
+    // Sembunyikan layar loading begitu iframe selesai memuat.
+    document.getElementById('appFrame').addEventListener('load', function () {
+      document.getElementById('loadingScreen').classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
