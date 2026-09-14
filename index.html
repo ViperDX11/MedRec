@@ -101,32 +101,4 @@
     setTimeout(hideSplash, 10000);
   </script>
 </body>
-</html>      align-items: center;
-      justify-content: center;
-      color: white;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 15px;
-      transition: opacity 0.3s ease;
-      z-index: 10;
-    }
-    #loadingScreen.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-  </style>
-</head>
-<body>
-  <div id="loadingScreen">Loading Medical Record Tracker…</div>
-
-  <!-- GANTI URL DI BAWAH INI dengan URL Deploy Apps Script Anda (harus diakhiri /exec) -->
-  <iframe id="appFrame" src="https://script.google.com/macros/s/AKfycbxG1sVU7y0HmJb1snjCcTWButkMcvGsvA_JCGciQpPlgnNJ5Wzce2U7E40okKoCJ-kh/exec"
-          allow="clipboard-write" title="Medical Record Tracker"></iframe>
-
-  <script>
-    // Sembunyikan layar loading begitu iframe selesai memuat.
-    document.getElementById('appFrame').addEventListener('load', function () {
-      document.getElementById('loadingScreen').classList.add('hidden');
-    });
-  </script>
-</body>
 </html>
