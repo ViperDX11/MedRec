@@ -23,13 +23,7 @@
     }
     #appFrame {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      /* env(safe-area-inset-*) keeps content clear of iPhone notches/home indicator when
-         installed via "Add to Home Screen" (standalone display mode). */
-      height: calc(100% + env(safe-area-inset-bottom));
+      inset: 0;
       border: none;
     }
     #loadingScreen {
@@ -55,7 +49,7 @@
   <div id="loadingScreen">Loading Medical Record Tracker…</div>
 
   <!-- GANTI URL DI BAWAH INI dengan URL Deploy Apps Script Anda (harus diakhiri /exec) -->
-  <iframe id="appFrame" src="https://script.google.com/macros/s/AKfycbxG1sVU7y0HmJb1snjCcTWButkMcvGsvA_JCGciQpPlgnNJ5Wzce2U7E40okKoCJ-kh/exec"
+  <iframe id="appFrame" src="https://script.google.com/macros/s/GANTI_DENGAN_DEPLOYMENT_ID_ANDA/exec"
           allow="clipboard-write" title="Medical Record Tracker"></iframe>
 
   <script>
